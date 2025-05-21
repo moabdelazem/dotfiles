@@ -7,6 +7,9 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/home/testuser/dotfiles
+    environment:
+      - TERM=${TERM:-xterm-256color}
+      - ZSH_VERSION=5.8
     tty: true
     stdin_open: true
-    command: /bin/bash -c "cd /home/testuser && /home/testuser/dotfiles/scripts/container_setup.sh && /bin/bash"
+    command: /bin/bash -c "cd /home/testuser && echo '🔧 Running container setup script...' && /home/testuser/dotfiles/scripts/container_setup.sh && echo '✅ Setup complete! Starting interactive shell...' && /bin/bash"

@@ -278,7 +278,7 @@ fi
 
 log "INFO" "Setup completed successfully!"
 
-log "INFO" "Please restart your shell or run 'source ~/.zshrc' to apply changes"
+log "INFO" "run 'source ~/.zshrc' to apply changes"
 if [[ $DRY_RUN == true ]]; then
     echo -e "${YELLOW}[DRY RUN] No changes were actually made${NC}"
 fi
