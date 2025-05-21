@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  dotfiles_test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/home/testuser/dotfiles
+    tty: true
+    stdin_open: true
+    command: /bin/bash -c "cd /home/testuser && /home/testuser/dotfiles/scripts/container_setup.sh && /bin/bash"
